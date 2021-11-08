@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 import './App.css';
 
@@ -11,16 +11,27 @@ function App() {
   const [showEvents, setShowEvents] = useState(true)
   const [events, setEvents] = useState([])
 
+  console.log(events)
+  
+  useEffect(() => {
+    fetch('http://localhost:3000/events')
+      .then(response => response.json())
+      .then(json => setEvents(json))
+      .catch(err => console.log(err))
+  }, [])
+  
+  
+  
   const handleClose = () => {
     setShowModal(false)
   }
-
+  
   const handleClick = (id) => {
     setEvents((prevEvents) => {
       return prevEvents.filter(event => id !== event.id)
     })
   }
-
+  
 
   return (
     <div className="App">
