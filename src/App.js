@@ -9,11 +9,7 @@ import NewEventForm from './NewEventForm';
 function App() {
   const [showModal, setShowModal] = useState(false)
   const [showEvents, setShowEvents] = useState(true)
-  const [events, setEvents] = useState([
-    {title: 'React Dojo', id: 1},
-    {title: 'Svelte Meetup', id: 2},
-    {title: 'Remix Launch', id: 3},
-  ])
+  const [events, setEvents] = useState([])
 
   const handleClose = () => {
     setShowModal(false)
