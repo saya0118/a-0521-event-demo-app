@@ -2,9 +2,9 @@ import React, {useState, useEffect} from 'react'
 
 import './App.css';
 
-import Modal from './Modal'
-import EventList from './EventList';
-import NewEventForm from './NewEventForm';
+import Modal from './components/Modal'
+import EventList from './components/EventList';
+import NewEventForm from './components/NewEventForm';
 
 function App() {
   const [showModal, setShowModal] = useState(false)
@@ -19,8 +19,6 @@ function App() {
       .then(json => setEvents(json))
       .catch(err => console.log(err))
   }, [])
-  
-  
   
   const handleClose = () => {
     setShowModal(false)
