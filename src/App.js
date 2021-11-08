@@ -1,9 +1,10 @@
 import React, {useState} from 'react'
 
 import './App.css';
-import EventList from './EventList';
 
 import Modal from './Modal'
+import EventList from './EventList';
+import NewEventForm from './NewEventForm';
 
 function App() {
   const [showModal, setShowModal] = useState(false)
@@ -27,7 +28,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Weekend Events</h1>
+      <h1 style={{ color: "red", paddingTop: "50px",}}>Weekend Events</h1>
 
       {showEvents && (
         <div>
@@ -44,8 +45,7 @@ function App() {
 
       {showModal && (
         <Modal handleClose={handleClose}>
-          <h2>This is a modal</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis doloribus tempora neque voluptatum deserunt, saepe sapiente eveniet exercitationem, culpa quo provident. Consequuntur eveniet temporibus error provident explicabo eligendi eos itaque?</p>
+          <NewEventForm />
         </Modal>
       )}
 
